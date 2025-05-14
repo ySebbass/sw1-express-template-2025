@@ -12,11 +12,13 @@ app.get('/', (request, response) => {
     response.render('home', {nome : "Sebastião"});
 });
 
-app.get('/tabuada', (request, response) => {
-resultado = [];
+app.get('/tabuada/:numero', (request, response) => {
+let resultado = [];
+const numero = 
+request.params ['numero'] //params seria o conteúdo que você você digitou//
 for (let cont = 1;cont <=10;cont++){
-resultado.push(cont * 5);
-response.render('tabuada', {valores : resultado});
+resultado.push(cont * numero);
+response.render('tabuada', {valores : resultado}); //Render seria ele calcular e mostrar o resultado para você de acordo que o como você programou// 
 }
 });
 
